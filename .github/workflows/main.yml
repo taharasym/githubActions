@@ -12,9 +12,9 @@ jobs:
           creds: "${{ secrets.AZURE_CREDENTIALS }}'          
 
       - name: Running a sample AZ CLI Command to view the account
-      uses: azure/CLI@v1
-      with:
-        azcliversion: latest
-        inlineScript: |
-          echo "Show Account information"
-          az account show
+        uses: azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            echo "Show Account information"
+            az account show
