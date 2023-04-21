@@ -1,0 +1,20 @@
+on: workflow_dispatch
+
+name: AzureLoginGitHub
+
+jobs:
+  azure-github:
+    run-on: ubuntu-latest
+    steps:
+      - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+          creds: "${{ secrets.AZURE_CREDENTIALS }}'          
+
+      - name: Running a sample AZ CLI Command to view the account
+      uses: azure/CLI@v1
+      with:
+        azcliversion: latest
+        inlineScript: |
+          echo "Show Account information"
+          az account show
